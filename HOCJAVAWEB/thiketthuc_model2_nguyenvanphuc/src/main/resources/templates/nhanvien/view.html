@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View nhanvien</title>
+</head>
+<body>
+<h1>View nhanvien: <span th:text="${province.tennhanvien}"></span></h1>
+<a href="/nhanviens">Nhanvien list</a>
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    <th:block th:each="khachhang : ${khachhangs}">
+        <tr>
+            <td th:text="${khachhang.makhachhang}"></td>
+            <td th:text="${khachhang.loaikhachhang}"></td>
+            <td th:text="${khachhang.hoten}"></td>
+            <td th:text="${khachhang.ngaysinh}"></td>
+
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

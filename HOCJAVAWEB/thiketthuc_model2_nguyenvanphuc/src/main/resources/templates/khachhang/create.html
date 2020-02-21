@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create customer</title>
+</head>
+<body>
+<h1>Create customer</h1>
+<p>
+    <a href="/customers">Customer list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create-khachhang}" th:object="${khachhang}" method="post">
+    <table>
+        <tr>
+            <td>Ma khach Hang:</td>
+            <td><input type="text" th:field="*{makhachhang}"/></td>
+        </tr>
+        <tr>
+            <td>Loai khach Hang:</td>
+            <td><input type="text" th:field="*{loaikhachhang}"/></td>
+        </tr>
+        <tr>
+            <td>Ho ten:</td>
+            <td><input type="text" th:field="*{hoten}"/></td>
+        </tr>
+        <tr>
+            <td>Ngay Sinh:</td>
+            <td><input type="text" th:field="*{ngaysinh}"/></td>
+        </tr>
+
+        <tr>
+            <td>Gioi Tinh:</td>
+            <td><input type="text" th:field="*{gioitinh}"/></td>
+        </tr>
+        <tr>
+            <td> So Dien Thoai:</td>
+            <td><input type="text" th:field="*{sodienthoai}"/></td>
+        </tr>
+        <tr>
+            <td>So CMNN:</td>
+            <td><input type="text" th:field="*{sochungminhnhandan}"/></td>
+        </tr>
+
+        <tr>
+            <td>NhanVien:</td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

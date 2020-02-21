@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Khach Hang</title>
+</head>
+<body>
+<h1>Edit customer</h1>
+<p>
+    <a href="/customers">Khach Hang list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit-khachhang}" th:object="${khachhang}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Ma Khach Hang:</td>
+            <td><input type="text" th:field="*{makhachhang}"/></td>
+        </tr>
+        <tr>
+            <td>Ho ten:</td>
+            <td><input type="text" th:field="*{hoten}"/></td>
+        </tr>
+        <tr>
+            <td>Ngay Sinh:</td>
+            <td><input type="text" th:field="*{ngaysinh}"/></td>
+        </tr>
+        <tr>
+            <td>Gioi Tinh:</td>
+            <td><input type="text" th:field="*{gioitinh}"/></td>
+        </tr>
+        <tr>
+            <td>So CMNN:</td>
+            <td><input type="text" th:field="*{sochungminhnhandan}"/></td>
+        </tr>
+        <tr>
+            <td>Province:</td>
+            <td>
+                <select name="province">
+                    <option th:each="p : ${provinces}"
+                            th:value="${p.id}"
+                            th:text="${p.tenkhachhang}"
+                            th:selected="(${p.id} == *{nhanvien.id})"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

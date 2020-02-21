@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>delete thành phố</title>
+</head>
+<body>
+<form th:action="@{/delete-tp}" th:object="${thanhpho}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Ten Thanh Pho:</td>
+            <td><input type="text" th:field="*{tenthanhpho}"/></td>
+        </tr>
+        <tr>
+            <td>Quốc GIa:</td>
+            <td><input type="text" th:field="*{quocgia}"/></td>
+        </tr>
+        <tr>
+            <td>Dien Tich:</td>
+            <td><input type="text" th:field="*{dientich}"/></td>
+        </tr>
+        <tr>
+            <td>Dan So:</td>
+            <td><input type="text" th:field="*{danso}"/></td>
+        </tr>
+
+        <tr>
+            <td>MO Ta:</td>
+            <td><input type="text" th:field="*{mota}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="delete now"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

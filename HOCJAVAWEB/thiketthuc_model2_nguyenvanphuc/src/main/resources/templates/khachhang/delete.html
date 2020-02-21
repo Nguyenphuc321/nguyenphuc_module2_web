@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete customer</title>
+</head>
+<body>
+<h1>Delete customer</h1>
+<h2>Are you sure?</h2>
+<p>
+    <a href="/customers">Customer list</a>
+</p>
+<form th:action="@{/delete-khachhang}" th:object="${khachhang}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Ma Khach Hang:</td>
+            <td th:text="${khachhang.makhachhang}"></td>
+        </tr>
+        <tr>
+            <td> Loai Khach Hang:</td>
+            <td th:text="${khachhang.loaikhachhang}"></td>
+        </tr>
+        <tr>
+            <td>Ho ten:</td>
+            <td th:text="${khachhang.hoten}"></td>
+        </tr>
+        <tr>
+            <td>:Ngay Sinh</td>
+            <td th:text="${khachhang.ngaysinh}"></td>
+        </tr>
+        <tr>
+            <td>Goi Tinh:</td>
+            <td th:text="${khachhang.gioitinh}"></td>
+        </tr>
+        <tr>
+            <td>So CMNN:</td>
+            <td th:text="${khachhang.sochungminhnhandan}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Delete customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

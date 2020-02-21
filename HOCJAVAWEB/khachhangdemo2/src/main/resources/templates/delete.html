@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>delete khách hàng</title>
+</head>
+<body>
+<form th:action="@{/delete-kh}" th:object="${khachhang}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Mã Khách Hàng:</td>
+            <td><input type="text" th:field="*{makhachhang}"/></td>
+        </tr>
+        <tr>
+            <td>Loại KH:</td>
+            <td><input type="text" th:field="*{loaikhachhang}"/></td>
+        </tr>
+        <tr>
+            <td>Ho ten:</td>
+            <td><input type="text" th:field="*{hoten}"/></td>
+        </tr>
+        <tr>
+            <td>Ngay Sinh:</td>
+            <td><input type="date" th:field="*{ngaysinh}"/></td>
+        </tr>
+
+        <tr>
+            <td>Giới Tính:</td>
+            <td><input type="text" th:field="*{gioitinh}"/></td>
+        </tr>
+        <tr>
+            <td>SDT:</td>
+            <td><input type="text" th:field="*{sodienthoai}"/></td>
+        </tr>
+        <tr>
+            <td>CMND:</td>
+            <td><input type="text" th:field="*{sochungminhnhandan}"/></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}"/></td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ:</td>
+            <td><input type="text" th:field="*{diachi}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="delete now"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

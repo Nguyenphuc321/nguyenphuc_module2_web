@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+</head>
+<body>
+<form th:action="@{/create-kh}" th:object="${thanhpho}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td> Ten Thanh Pho:</td>
+            <td><input type="text" th:field="*{tenthanhpho}"/></td>
+
+        </tr>
+        <tr>
+            <td>QUoc Gia:</td>
+            <td><input type="text" th:field="*{quocgia}"/></td>
+        </tr>
+        <tr>
+            <td>DienTich:</td>
+            <td><input type="text" th:field="*{dientich}"/></td>
+        </tr>
+        <tr>
+            <td>Dan So:</td>
+            <td><input type="text" th:field="*{danso}"/></td>
+        </tr>
+        <tr>
+            <td>GDP:</td>
+            <td><input type="text" th:field="*{GDP}"/></td>
+        </tr>
+        <tr>
+            <td>Mo Ta:</td>
+            <td><input type="text" th:field="*{mota}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="create now"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

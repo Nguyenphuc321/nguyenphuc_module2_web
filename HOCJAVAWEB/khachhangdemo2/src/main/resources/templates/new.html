@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+</head>
+<body>
+<form th:action="@{/create-kh}" th:object="${khachhang}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Mã Khách Hàng:</td>
+            <td><input type="text" th:field="*{makhachhang}"/></td>
+            <td th:if="${#fields.hasErrors('makhachhang')}" th:errors="*{makhachhang}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Tên KH:</td>
+            <td><input type="text" th:field="*{hoten}"/></td>
+            <td th:if="${#fields.hasErrors('hoten')}" th:errors="*{hoten}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Loại KH:</td>
+            <td><input type="text" th:field="*{loaikhachhang}"/></td>
+            <td th:if="${#fields.hasErrors('loaikhachhang')}" th:errors="*{loaikhachhang}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Ngày Sinh:</td>
+            <td><input type="date" th:field="*{ngaysinh}"/></td>
+            <td th:if="${#fields.hasErrors('ngaysinh')}" th:errors="*{ngaysinh}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Giới Tính:</td>
+            <td><input type="text" th:field="*{gioitinh}"/></td>
+            <td th:if="${#fields.hasErrors('gioitinh')}" th:errors="*{gioitinh}">Name Error</td>
+        </tr>
+        <tr>
+            <td>SDT:</td>
+            <td><input type="text" th:field="*{sodienthoai}"/></td>
+            <td th:if="${#fields.hasErrors('sodienthoai')}" th:errors="*{sodienthoai}">Name Error</td>
+        </tr>
+        <tr>
+            <td>CMND:</td>
+            <td><input type="text" th:field="*{sochungminhnhandan}"/></td>
+            <td th:if="${#fields.hasErrors('sochungminhnhandan')}" th:errors="*{sochungminhnhandan}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}"/></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ:</td>
+            <td><input type="text" th:field="*{diachi}"/></td>
+            <td th:if="${#fields.hasErrors('diachi')}" th:errors="*{diachi}">Name Error</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="create now"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

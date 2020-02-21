@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head"></head>
+<body>
+<div th:fragment="header1" id="main" class="main">
+    <div id="header" class="header">
+        <a href="#" id="header1" class="header1">Login</a>
+        <a href="/villa" id="header1" class="header1">Rentregistration</a>
+        <a href="/user" id="header1" class="header1">MemberRegistration</a>
+
+        <div id="logo" class="logo">
+            <a href="#" id="logo1" class="logo1">Furama</a>
+        </div>
+
+    </div>
+    <div id="contain" class="contain">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Help</a></li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="float: left">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Library
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">Book</button>
+                    <button type="button" class="list-group-item list-group-item-action">Music</button>
+                    <button type="button" class="list-group-item list-group-item-action">Movie</button>
+                    <button type="button" class="list-group-item list-group-item-action">Swimming</button>
+                    <button type="button" class="list-group-item list-group-item-action">Car</button>
+                </div>
+            </div>
+            <div class="col-md-6" style="background: #b2bec3">
+            </div>
+            <div class="col-md-3">
+
+                <form th:object="${dichvuvilla}"th:action="@{/villa}" method="post">
+
+                    <div>
+                        <button type="button" class="list-group-item list-group-item-action active">
+                            REGISTRATION
+                        </button>
+                        <p>Tendichvu:</p>
+                        <input type="text"th:field="*{tendichvu}">
+                    </div>
+                    <div>
+                        <p>Dientichsudung:</p>
+                        <input type="text"th:field="*{dientich}">
+                    </div>
+                    <div>
+                        <p>ChiPhiThue:</p>
+                        <input type="text"th:field="*{chiphithue}">
+                    </div>
+                    <div>
+                        <p>SoNguoiToiDa:</p>
+                        <input type="text"th:field="*{songuoitoida}">
+                    </div>
+                    <div>
+                        <p>KieuThue:</p>
+                        <input type="text"th:field="*{kieuthue}">
+                    </div>
+                    <input type="submit" value="save">
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head"></head>
+<body>
+<div th:fragment="header1" id="main" class="main">
+    <div id="header" class="header">
+        <a href="#" id="header1" class="header1">Login</a>
+        <a href="/villa" id="header1" class="header1">Rentregistration</a>
+        <a href="/user" id="header1" class="header1">MemberRegistration</a>
+
+        <div id="logo" class="logo">
+            <a href="#" id="logo1" class="logo1">Furama</a>
+        </div>
+
+    </div>
+    <div id="contain" class="contain">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Help</a></li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="float: left">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        Library
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">Book</button>
+                    <button type="button" class="list-group-item list-group-item-action">Music</button>
+                    <button type="button" class="list-group-item list-group-item-action">Movie</button>
+                    <button type="button" class="list-group-item list-group-item-action">Swimming</button>
+                    <button type="button" class="list-group-item list-group-item-action">Car</button>
+                </div>
+            </div>
+            <div class="col-md-6" style="background: #b2bec3">
+            </div>
+            <div class="col-md-3">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                        MemberRegistration
+                    </button>
+                </div>
+                <form th:object="${user}" th:action="@{/validateUser}" method="post" >
+                    <table>
+                        <tr>
+                            <td>UserName</td>
+                            <td><input th:field="*{userName}"></td>
+                            <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>PassWord:</td>
+                            <td><input th:field="*{passWord}"></td>
+                            <td th:if="${#fields.hasErrors('passWord')}" th:errors="*{passWord}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>phonenumber:</td>
+                            <td><input th:field="*{phonenumber}"></td>
+                            <td th:if="${#fields.hasErrors('phonenumber')}" th:errors="*{phonenumber}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>Idnumber</td>
+                            <td><input th:field="*{Idnumber}"></td>
+                            <td th:if="${#fields.hasErrors('Idnumber')}" th:errors="*{Idnumber}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>age:</td>
+                            <td><input th:field="*{age}"></td>
+                            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>email:</td>
+                            <td><input th:field="*{email}"></td>
+                            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>sex</td>
+                            <td><input th:field="*{sex}"></td>
+                            <td th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>country</td>
+                            <td><input th:field="*{country}"></td>
+                            <td th:if="${#fields.hasErrors('country')}" th:errors="*{country}">Name Error</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="submit">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <footer th:replace="layout :: footer"></footer>
+</body>
+</html>

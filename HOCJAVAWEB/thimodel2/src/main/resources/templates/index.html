@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Pho</title>
+</head>
+<body>
+<form th:action="@{/find-kh}">
+    <label>Tìm</label>
+    <input type="text" name="name">
+    <input type="submit" value="Find">
+</form>
+
+<form>
+    <table border="2">
+        <tr>
+            <td>TenThanhPho</td>
+            <td>QuocGia</td>
+            <td>DienTich</td>
+            <td>DanSo</td>
+            <td>GDP</td>
+            <td>MoTa</td>
+            <td>Email</td>
+            <td>DiaChi</td>
+
+        </tr>
+        <th:block th:each="cus: ${listThanhPho}">
+            <tr>
+                <td th:text="${cus.id}"></td>
+                <td th:text="${cus.tenthanhpho}"></td>
+                <td th:text="${cus.quocgia}"></td>
+                <td th:text="${cus.dientich}"></td>
+                <td th:text="${cus.danso}"></td>
+                <td th:text="${cus.GDP}"></td>
+                <td th:text="${cus.mota}"></td>
+
+                <td><a th:href="@{/edit-kh/__${cus.id}__ }">Edit</a></td>
+                <td><a th:href="@{/delete-kh/__${cus.id}__ }">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+</form>
+<a th:href="@{/new-kh}">Thêm moi danh sach</a>
+
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Khach hang</title>
+</head>
+<body>
+<form th:action="@{/find-kh}">
+    <label>Tìm</label>
+    <input type="text" name="name">
+    <input type="submit" value="Search">
+</form>
+
+<form>
+    <table border="2">
+        <tr>
+            <td>Mã KH</td>
+            <td>Họ Tên</td>
+            <td>loại KH</td>
+            <td>Giới Tính</td>
+            <td>Số DT</td>
+            <td>SoChungMinhNhanDan </td>
+            <td>Email</td>
+            <td>DiaChi</td>
+
+        </tr>
+        <th:block th:each="cus: ${listKhachHang}">
+            <tr>
+                <td th:text="${cus.makhachhang}"></td>
+                <td th:text="${cus.hoten}"></td>
+                <td th:text="${cus.loaikhachhang}"></td>
+                <td th:text="${cus.gioitinh}"></td>
+                <td th:text="${cus.sodienthoai}"></td>
+                <td th:text="${cus.sochungminhnhandan}"></td>
+                <td th:text="${cus.email}"></td>
+                <td th:text="${cus.diachi}"></td>
+                <td><a th:href="@{/edit-kh/__${cus.id}__ }">Edit</a></td>
+                <td><a th:href="@{/delete-kh/__${cus.id}__ }">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+</form>
+<a th:href="@{/new-kh}">Thêm Khách hàng</a>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+</body>
+</html>

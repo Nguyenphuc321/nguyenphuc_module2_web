@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dang ki khach hang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:each="dichvu:${favorite}">
+<p th:text="${dichvu.getTendichvu()}"></p>
+<p th:text="${dichvu.getId()}"></p>
+<p th:text="${dichvu.getDientich()}"></p>
+<p th:text="${dichvu.getSotang()}"></p>
+<p th:text="${dichvu.getSonguoitoida()}"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gayathri&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka|Gayathri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            border: 1px solid #40739e;
+            width: 1200px;
+            height: 690px;
+            margin-left: 150px;
+        }
+        .header{
+            width: 1200px;
+            height: 200px;
+            border-bottom: 1px solid #40739e;
+        }
+        .logo{
+            margin-top:50px;
+            margin-bottom: 100px;
+            margin-left: 300px;
+            width: 300px;
+            height: 150px;
+        }
+        .logo1{
+            font-size: 50px;
+            color: #0097e6;
+            text-decoration: none;
+            font-family: 'Gayathri', sans-serif;
+        }
+        .logo1:hover{
+            color: #00a8ff;
+            font-family: 'Chilanka', cursive;
+        }
+        .header1{
+            float: right;
+            margin-right: 50px;
+            text-decoration: none;
+            color:#9c88ff;
+        }
+        .contain{
+            width: 950px;
+            height: 70px;
+            margin-left: 25px;
+            margin-top:20px;
+            text-align: center;
+
+        }
+        #contain ul{
+            list-style:none;
+        }
+        #contain ul li{
+            width:250px;
+            height:40px;
+            border:1px solid #40739e;
+            line-height: 40px;
+            text-align:center;
+            float:left;
+            font-size:16px;
+            position:relative;
+            border-radius:25px;
+            margin-left: 30px;
+        }
+        #contain a{
+            text-decoration: none;
+            color: #0984e3;
+        }
+        #contain a:hover{
+            color: #55efc4;
+        }
+        #contain ul li:hover{
+            background-color:#CCC;
+        }
+        #contain ul ul{
+            display:none;
+        }
+        #contain ul li:hover > ul{
+            display:block;
+        }
+        #contain ul ul ul{
+            margin-left:150px;
+            top: 0px;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="header1" id="main" class="main" >
+    <div id="header" class="header">
+        <a href="#" id="header1" class="header1">Login</a>
+        <a href="/villa" id="header1" class="header1">Rentregistration</a>
+        <a href="/user" id="header1" class="header1">MemberRegistration</a>
+        <div id="logo" class="logo">
+            <a href="#" id="logo1" class="logo1">Furama</a>
+        </div>
+    </div>
+    <div id="contain" class="contain">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Help</a></li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+    </div>
+    <footer th:fragment="footer">
+        <div class="footer">
+            <div class="col-md-9" style="border-radius: 1px #40739e; background: #b2bec3;float:left;height: 225px">
+                &copy; Designer By Dev 10 NguyenPhuc2019
+            </div>
+            <div class="col-md-3" style="background: lime; float: left;height: 125px;"><a href="" style="text-decoration: none; color: #0984e3">phuckt657@gmail.com</a></div>
+        </div>
+    </footer>
+</body>
+</html>

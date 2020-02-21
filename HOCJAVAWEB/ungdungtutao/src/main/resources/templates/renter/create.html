@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create renter</title>
+</head>
+<body>
+<h1>Create renter</h1>
+<p>
+    <a href="/renters">Renters list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create-renter}" th:object="${renter}" method="post">
+    <table>
+        <tr>
+            <td>NameRenter:</td>
+            <td><input type="text" th:field="*{namerenter}"/></td>
+        </tr>
+        <tr>
+            <td>idcard:</td>
+            <td><input type="text" th:field="*{idcard}"/></td>
+        </tr>
+
+        <tr>
+            <td>ngaythue:</td>
+            <td><input type="text" th:field="*{ngaythue}"/></td>
+        </tr>
+        <tr>
+            <td>ngayketthuc:</td>
+            <td><input type="text" th:field="*{ngayketthuc}"/></td>
+        </tr>
+
+            <td>Hotel:</td>
+            <td>
+                <select th:field="*{hotel}">
+                    <option th:each="p : ${hotels}" th:value="${p.id}" th:text="${p.tenkhachsan}" th:text="${p.diachi}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create customer"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
